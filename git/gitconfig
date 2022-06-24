@@ -1,0 +1,7 @@
+[includeIf "gitdir:~/Repos/"]
+	path = .gitconfig-chip
+[includeIf "gitdir:~/Repos/Personal/"]
+	path = .gitconfig-personal
+[includeIf "gitdir:~/"]
+	path = .gitconfig-personal
+

@@ -1,0 +1,41 @@
+#------------------------------------------------------------
+# Load plugins
+#------------------------------------------------------------
+
+PLUGIN_DIR="$HOME/.zsh-plugins"
+for PLUGIN in $(ls $PLUGIN_DIR)
+do
+#    echo Loading $PLUGIN
+    source $PLUGIN_DIR/$PLUGIN
+done
+
+#------------------------------------------------------------
+# Stuff to sort...
+#------------------------------------------------------------
+# VS Code
+export EDITOR="/usr/local/bin/code -w"
+
+# Homebrew
+export PATH="/opt/homebrew/bin:$PATH"
+export PATH="/opt/homebrew/sbin:$PATH"
+
+# Node version manager
+export NVM_DIR=~/.nvm
+source $(brew --prefix nvm)/nvm.sh
+
+# Ruby
+export RBENV_ROOT=/opt/homebrew/opt/rbenv
+export PATH="$RBENV_ROOT/bin:$PATH"
+eval "$(rbenv init - zsh)"
+
+# OpenSSL
+export PATH="/opt/homebrew/opt/openssl@1.1/bin:$PATH"
+export LDFLAGS="-L/opt/homebrew/opt/openssl@1.1/lib"
+export CPPFLAGS="-I/opt/homebrew/opt/openssl@1.1/include"
+export PKG_CONFIG_PATH="/opt/homebrew/opt/openssl@1.1/lib/pkgconfig"
+export RUBY_CONFIGURE_OPTS="--with-openssl-dir=/opt/homebrew/opt/openssl@1.1"
+
+# Libffi
+export LDFLAGS="-L/opt/homebrew/opt/libffi/lib"
+export CPPFLAGS="-I/opt/homebrew/opt/libffi/include"
+export PKG_CONFIG_PATH="/opt/homebrew/opt/libffi/lib/pkgconfig"
