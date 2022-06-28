@@ -23,11 +23,6 @@ export PATH="/opt/homebrew/sbin:$PATH"
 export NVM_DIR=~/.nvm
 source $(brew --prefix nvm)/nvm.sh
 
-# Ruby
-export RBENV_ROOT=/opt/homebrew/opt/rbenv
-export PATH="$RBENV_ROOT/bin:$PATH"
-eval "$(rbenv init - zsh)"
-
 # OpenSSL
 export PATH="/opt/homebrew/opt/openssl@1.1/bin:$PATH"
 export LDFLAGS="-L/opt/homebrew/opt/openssl@1.1/lib"
